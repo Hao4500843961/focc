@@ -2,12 +2,19 @@
   <div id="app">
     <!--<img src="./assets/logo.png">-->
     <router-view/>
+
   </div>
+<!--  修改-->
+<!--  11-->
 </template>
 
 <script>
 export default {
-  name: 'App'
+
+  name: 'App',
+  methods:{
+
+  }
 }
 </script>
 
