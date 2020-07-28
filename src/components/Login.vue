@@ -1,11 +1,7 @@
 <template>
   <div class="bodybg">
     <div class="login">
-      <el-card>测试element UI 是否生效，此页是登录注册页面</el-card>
-      <el-button type="warning">警告</el-button>
-      <b-card-img></b-card-img>
-      <el-calendar></el-calendar>
-      <!--<button type="submit" class="btn btn-primary btn-block btn-large">Sign in</button>-->
+
 
     </div>
   </div>
