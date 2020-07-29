@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2401503",
+      "name": "表情",
+      "font_class": "biaoqing",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "3041000",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "4426664",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "8119321",
+      "name": "截图",
+      "font_class": "jietu",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "8884670",
+      "name": "视频",
+      "font_class": "shipin1",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "9692789",
+      "name": "文件",
+      "font_class": "zu-",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "10233598",
+      "name": "表  情",
+      "font_class": "biaoqing1",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "11114925",
+      "name": "电  话",
+      "font_class": "dianhua",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "12304915",
+      "name": "电 话",
+      "font_class": "dianhua1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13883767",
+      "name": "截图",
+      "font_class": "jietu1",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "15226999",
+      "name": "截图",
+      "font_class": "jietu2",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "31417",
       "name": "ip",
       "font_class": "ip1",

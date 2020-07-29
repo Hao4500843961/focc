@@ -2,9 +2,11 @@
   <div class="bodybg">
     <div class="content">
       <el-container class="card">
-        <el-aside width="110px">最左边蓝色区域</el-aside>
+        <el-aside width="110px">FOCC
+          <div class="block"><el-avatar shape="square" :size="50" :src="headImg"></el-avatar></div>
+        </el-aside>
         <el-container>
-          <el-header height="80px">
+          <el-header height="80px" class="border-bottom">
             <el-input class="search"
               placeholder="搜索联系人、群组"
               prefix-icon="el-icon-search"
@@ -12,11 +14,21 @@
             </el-input>
           </el-header>
           <el-container>
-            <el-aside width="330px" class="colorbg">通讯录列表</el-aside>
+            <el-aside width="330px" class="bg_white border-right">通讯录列表</el-aside>
             <el-container>
-              <el-main>聊天窗口</el-main>
-              <el-header height="50px">图标栏</el-header>
-              <el-footer height="150px">输入框</el-footer>
+              <el-main class="bg_gray">聊天窗口</el-main>
+              <el-header height="50px" class="bg_white border-bottom">
+                <el-row style="float: left">
+                  <el-button  type="text" icon="icon-ali-biaoqing1" ></el-button>
+                  <el-button  type="text" icon="icon-ali-wenjian" ></el-button>
+                  <el-button  type="text" icon="icon-ali-jietu2" ></el-button>
+                  <el-button  type="text" icon="icon-ali-dianhua1" ></el-button>
+                  <el-button  type="text" icon="icon-ali-shipin" ></el-button>
+                </el-row>
+              </el-header>
+              <el-footer height="150px">
+                文本输入区域
+              </el-footer>
             </el-container>
           </el-container>
         </el-container>
@@ -30,7 +42,8 @@
     name: "Home",
     data() {
       return {
-        search: ''
+        search: '',
+        headImg:require('../assets/head_img.png')
       }
     }
   }
@@ -78,15 +91,19 @@
   }
 
   .el-header {
-    background-color: gold;
+    background-color: white;
     color: #333;
-    border: 1px solid #42b983;
+  }
+  .border-right{
+    border-right: 1px solid #E6E6E6;
+  }
+
+  .border-bottom{
+    border-bottom: 1px solid #E6E6E6;
   }
 
   .el-footer {
-    background-color: rosybrown;
     color: #333;
-    border: 1px solid #42b983;
   }
 
   .el-aside {
@@ -107,5 +124,12 @@
     width: 250px;
     float: left;
     vertical-align: middle;
+  }
+
+  .bg_gray{
+    background-color: #EEF1F3;
+  }
+  .bg_white{
+    background-color: white;
   }
 </style>
