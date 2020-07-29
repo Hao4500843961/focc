@@ -13,6 +13,7 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /*add by haoxl*/
 
+
 Vue.config.productionTip = false
 /*add by haoxl bootstrap-vue*/
 //Vue.use(BootstrapVue)

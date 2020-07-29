@@ -72,6 +72,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
     height: 100%;
     width: 100%;
+    background:rgba(255,255,255,0.3);
   }
   .mg-top-52{
     margin-top: 52px;
