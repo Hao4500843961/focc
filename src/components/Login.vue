@@ -4,20 +4,20 @@
       <el-card class="card">
         <el-input class="mg-top-52"
           placeholder="请输入帐号"
-          prefix-icon="el-icon-user"
+          prefix-icon="icon-ali-account"
           v-model="account" clearable>
         </el-input>
         <el-input class="mg-top-20"
           placeholder="请输入密码"
-          prefix-icon="el-icon-search"
+          prefix-icon="icon-ali-mima"
           v-model="password" show-password clearable>
         </el-input>
         <el-input class="mg-top-20"
           placeholder="请输入IP"
-          prefix-icon="el-icon-search"
+          prefix-icon="icon-ali-ip1"
           v-model="proxy" clearable>
         </el-input>
-        <el-button type="primary" class="mg-top-92 login_btn" round>
+        <el-button type="primary" class="mg-top-92 login_btn" round v-on:click="toHomePage">
           登录
         </el-button>
       </el-card>
@@ -34,6 +34,11 @@
           account: '',
           password: '',
           proxy: ''
+        }
+      },
+      methods:{
+        toHomePage(){
+          this.$router.push('/home')
         }
       }
     }
@@ -60,13 +65,10 @@
   .login{
     height: 480px;
     width: 480px;
-    /*margin: auto;*/
-    position: absolute;
+    margin: auto;
+    /*position: absolute;
     top: 30%;
-    left: 40%;
-   /* margin-left: auto;
-    margin-right: auto;*/
-
+    left: 40%;*/
   }
   .card{
     box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
@@ -85,6 +87,9 @@
   }
   .login_btn{
     width: 360px;
+  }
+  .height-55{
+    height: 55px;
   }
 
 

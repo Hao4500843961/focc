@@ -15,7 +15,15 @@
    <style/>写css代码；
 11、html页面的<head>标签放在public/index.html中，是所有页面的公共头部。
 12、已经创建了Login.vue登录注册页面，供大家参考。
-13、若有需要用npm引入的其他库，需要在导入后，需要先在main.js中做相关的引入。  
-
+13、若有需要用npm引入的其他库，需要在导入后，需要先在main.js中做相关的引入。
+14、rm -rf node_modules；rm package-lock.json；npm cache clear --force；npm install
+15、elemnt ui图标库中的图标较少，项目中已经引入了阿里巴巴矢量图标库。
+16、[class="icon-ali-"], [class*="icon-ali-"]{
+     font-family: "iconfont" !important;
+     font-size: 16px;
+     font-style: normal;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
 
 

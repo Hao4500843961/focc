@@ -1,0 +1,37 @@
+{
+  "id": "1972998",
+  "name": "focc-iconfont",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-ali-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "31417",
+      "name": "ip",
+      "font_class": "ip1",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "4485122",
+      "name": "账号",
+      "font_class": "account",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1447197",
+      "name": "ip",
+      "font_class": "ip",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "10536734",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}
