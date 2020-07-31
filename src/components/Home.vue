@@ -2,8 +2,33 @@
   <div class="bodybg">
     <div class="content">
       <el-container class="card">
-        <el-aside width="110px">FOCC
-          <div class="block"><el-avatar shape="square" :size="50" :src="headImg"></el-avatar></div>
+        <el-aside width="110px">
+          <div class="block"><el-avatar shape="square" :size="50" :src="headImg" v-on:listenToChildEvent="onclick"></el-avatar></div>
+          <!--123-->
+          <el-col :span="20">
+            <el-menu
+              default-active="1"
+              class="el-menu-vertical-demo"
+              @open="handleOpen"
+              @close="handleClose"
+              background-color="#1183FB"
+              text-color="#fff"
+              active-text-color="#ffd04b">
+              <el-menu-item index="1">
+                <i class="el-icon-location"></i>
+                <span slot="title">聊天</span>
+              </el-menu-item>
+              <el-menu-item index="2">
+                <i class="el-icon-menu"></i>
+                <span slot="title">拨号</span>
+              </el-menu-item>
+              <el-menu-item index="3">
+                <i class="el-icon-document"></i>
+                <span slot="title">通讯录</span>
+              </el-menu-item>
+            </el-menu>
+          </el-col>
+          <!--123-->
         </el-aside>
         <el-container>
           <el-header height="80px" class="border-bottom">
@@ -14,9 +39,9 @@
             </el-input>
           </el-header>
           <el-container>
-            <el-aside width="330px" class="bg_white border-right">通讯录列表</el-aside>
+            <el-aside width="330px" class="bg_white border-right"><ContactsList></ContactsList>通讯录列表</el-aside>
             <el-container>
-              <el-main class="bg_gray">聊天窗口</el-main>
+              <el-main class="bg_gray"><dial></dial>聊天窗口</el-main>
               <el-header height="50px" class="bg_white border-bottom">
                 <el-row style="float: left">
                   <el-button  type="text" icon="icon-ali-biaoqing1" ></el-button>
@@ -38,12 +63,23 @@
 </template>
 
 <script>
+  import Dial from '../components/views/dial'
+  import ContactsList from '../components/views/contactsList'
   export default {
     name: "Home",
     data() {
       return {
         search: '',
         headImg:require('../assets/head_img.png')
+      }
+    },
+    components:{
+      Dial,
+      ContactsList
+    },
+    methods:{
+      onclick(data){
+        this.$router.push(data)
       }
     }
   }

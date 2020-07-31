@@ -16,7 +16,17 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      children:[
+        {
+          path:'dial',
+          component:()=>import('@/components/views/dial')
+        },
+        {
+          path:'contactsList',
+          component:()=>import('@/components/views/contactsList')
+        }
+      ]
     }
   ]
 })
