@@ -39,9 +39,9 @@
             </el-input>
           </el-header>
           <el-container>
-            <el-aside width="330px" class="bg_white border-right"><ContactsList></ContactsList>通讯录列表</el-aside>
+            <el-aside width="330px" class="bg_white border-right"><ContactsList></ContactsList></el-aside>
             <el-container>
-              <el-main class="bg_gray"><dial></dial>聊天窗口</el-main>
+              <el-main class="bg_gray"><dial></dial></el-main>
               <el-header height="50px" class="bg_white border-bottom">
                 <el-row style="float: left">
                   <el-button  type="text" icon="icon-ali-biaoqing1" ></el-button>
@@ -116,7 +116,10 @@
   .content {
     height: 800px;
     width: 1400px;
-    margin: auto;
+    margin: 0 auto;
+    position: relative;
+    transform:translateY(-50%);
+    top: 50%;
   }
 
   .card {

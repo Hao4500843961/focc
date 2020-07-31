@@ -65,10 +65,10 @@
   .login{
     height: 480px;
     width: 480px;
-    margin: auto;
-    /*position: absolute;
-    top: 30%;
-    left: 40%;*/
+    margin: 0 auto;
+    position: relative;
+    transform:translateY(-50%);
+    top: 50%;
   }
   .card{
     box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
