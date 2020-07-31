@@ -11,7 +11,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'*/
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './assets/iconfont/iconfont.css'
 /*add by haoxl*/
+
 
 Vue.config.productionTip = false
 /*add by haoxl bootstrap-vue*/
