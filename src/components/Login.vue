@@ -1,6 +1,7 @@
 <template>
   <div class="bodybg">
     <div class="login">
+      <div style="color: #ffffff"><h1>FOCC通讯系统</h1></div>
       <el-card class="card">
         <el-input class="mg-top-52"
           placeholder="请输入帐号"
@@ -61,6 +62,7 @@
     background-image: linear-gradient(lightgrey, #9198e5);*/
     background: url("../assets/bg.png") no-repeat 100% 100%;
     background-size: 100%;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   }
   .login{
     height: 480px;
