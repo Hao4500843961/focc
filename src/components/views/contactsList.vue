@@ -1,5 +1,5 @@
 <template>
-  <el-button type="primary" round>主要按钮</el-button>
+  <el-button type="primary" round>这是一个组件，来自contactsList.vue</el-button>
 </template>
 
 <script>

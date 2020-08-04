@@ -1,6 +1,7 @@
 <template>
   <div class="bodybg">
     <div class="login">
+      <div style="color: #ffffff"><h1>FOCC通讯系统</h1></div>
       <el-card class="card">
         <el-input class="mg-top-52"
           placeholder="请输入帐号"
@@ -61,14 +62,15 @@
     background-image: linear-gradient(lightgrey, #9198e5);*/
     background: url("../assets/bg.png") no-repeat 100% 100%;
     background-size: 100%;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   }
   .login{
     height: 480px;
     width: 480px;
-    margin: auto;
-    /*position: absolute;
-    top: 30%;
-    left: 40%;*/
+    margin: 0 auto;
+    position: relative;
+    transform:translateY(-50%);
+    top: 50%;
   }
   .card{
     box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);

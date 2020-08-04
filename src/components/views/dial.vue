@@ -1,5 +1,5 @@
 <template>
-  <el-button type="warning" plain>警告按钮</el-button>
+  <el-button type="warning" plain>这是一个组件，来自dial.vue</el-button>
 </template>
 
 <script>
