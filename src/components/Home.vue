@@ -13,12 +13,13 @@
               @close="handleClose"
               background-color="#1183FB"
               text-color="#fff"
-              active-text-color="#ffd04b">
-              <el-menu-item index="1">
+              active-text-color="#ffd04b"
+              router>
+              <el-menu-item index="/contactsList">
                 <i class="el-icon-location"></i>
                 <span slot="title">聊天</span>
               </el-menu-item>
-              <el-menu-item index="2">
+              <el-menu-item index="/dial">
                 <i class="el-icon-menu"></i>
                 <span slot="title">拨号</span>
               </el-menu-item>
@@ -30,33 +31,7 @@
           </el-col>
           <!--123-->
         </el-aside>
-        <el-container>
-          <el-header height="80px" class="border-bottom">
-            <el-input class="search"
-              placeholder="搜索联系人、群组"
-              prefix-icon="el-icon-search"
-              v-model="search" clearable>
-            </el-input>
-          </el-header>
-          <el-container>
-            <el-aside width="330px" class="bg_white border-right"><ContactsList></ContactsList></el-aside>
-            <el-container>
-              <el-main class="bg_gray"><dial></dial></el-main>
-              <el-header height="50px" class="bg_white border-bottom">
-                <el-row style="float: left">
-                  <el-button  type="text" icon="icon-ali-biaoqing1" ></el-button>
-                  <el-button  type="text" icon="icon-ali-wenjian" ></el-button>
-                  <el-button  type="text" icon="icon-ali-jietu2" ></el-button>
-                  <el-button  type="text" icon="icon-ali-dianhua1" ></el-button>
-                  <el-button  type="text" icon="icon-ali-shipin" ></el-button>
-                </el-row>
-              </el-header>
-              <el-footer height="150px">
-                文本输入区域
-              </el-footer>
-            </el-container>
-          </el-container>
-        </el-container>
+        <el-main><router-view></router-view></el-main>
       </el-container>
     </div>
   </div>
@@ -69,7 +44,6 @@
     name: "Home",
     data() {
       return {
-        search: '',
         headImg:require('../assets/head_img.png')
       }
     },
@@ -116,10 +90,7 @@
   .content {
     height: 800px;
     width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    transform:translateY(-50%);
-    top: 50%;
+    margin: auto;
   }
 
   .card {

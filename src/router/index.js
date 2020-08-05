@@ -19,11 +19,11 @@ export default new Router({
       component: Home,
       children:[
         {
-          path:'dial',
+          path:'/dial',
           component:()=>import('@/components/views/dial')
         },
         {
-          path:'contactsList',
+          path:'/contactsList',
           component:()=>import('@/components/views/contactsList')
         }
       ]
