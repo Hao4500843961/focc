@@ -86,7 +86,9 @@
     background: url("../assets/home_bg.jpg") no-repeat 100% 100%;
     background-size: 100%;
   }
-
+	.el-main{
+    padding: 0 !important;
+	}
   .content {
     height: 800px;
     width: 1400px;
