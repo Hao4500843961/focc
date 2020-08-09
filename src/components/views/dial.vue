@@ -133,6 +133,14 @@
 </template>
 
 <script>
+
+// import * as SIP from "jssip";
+// import * as JsSIP from 'jssip';
+//
+//   // const socket = new this.JsSIP.WebSocketInterface(obj.wsUrl);
+//
+//     const userAgent = new SIP.UA(config);
+
     export default {
       data () {
         return {
@@ -149,7 +157,15 @@
           url7:require('../../assets/fooc_xiaotu/7.png'),
           url8:require('../../assets/fooc_xiaotu/8.png'),
           url9:require('../../assets/fooc_xiaotu/calling.png'),
-          url10:require('../../assets/fooc_xiaotu/10.png')
+          url10:require('../../assets/fooc_xiaotu/10.png'),
+          config:{
+            uri:'1010@112.124.15.33',
+            transportOptions: {
+                  wsServers: ['wss://112.124.15.33:7443']
+                 },
+            authorizationUser: '1010',
+            password: 'test1'
+          }
         }
       },
       name: "Dial",
@@ -167,9 +183,42 @@
         clear: function () {
           this.currentNumber = '';
         },
-        phone:function () {
 
-        }
+        phone:function () {
+            alert(this.currentNumber);
+          // var to =document.getElementById(this.currentNumber);
+          // var sipsession = userAgent.invite(to + '@:7443', {
+            //   sessionDescriptionHandlerOptions: {
+            //     constraints: {
+            //       audio: true,  video: true
+            //     }
+            //   }
+            // });
+            //
+            // sipsession.on('accepted', function() {
+            //   // We need to check the peer connection to determine which track was added
+            //
+            //   var pc = sipsession.sessionDescriptionHandler.peerConnection;
+            //
+            //   // Gets remote tracks
+            //   var remoteStream = new MediaStream();
+            //   pc.getReceivers().forEach(function(receiver) {
+            //     remoteStream.addTrack(receiver.track);261074724
+            //   });
+            //   remoteVideo.srcObject = remoteStream;
+            //   remoteVideo.play();
+            //
+            //   // Gets local tracks
+            //   if(pc.getSenders() ){
+            //     var localStream = new MediaStream();
+            //     pc.getSenders().forEach(function(sender) {
+            //       localStream.addTrack(sender.track);
+            //     });
+            //     localVideo.srcObject = localStream;
+            //     localVideo.play();
+            //   }
+            // });
+          }
 
 
       }

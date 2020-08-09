@@ -17,7 +17,7 @@
               router>
               <el-menu-item index="/contactsList">
                 <i class="el-icon-location"></i>
-                <span slot="title">聊天</span>
+                <span >聊天</span>
               </el-menu-item>
               <el-menu-item index="/dial">
                 <i class="el-icon-menu"></i>
@@ -29,7 +29,14 @@
               </el-menu-item>
             </el-menu>
           </el-col>
-          <!--123-->
+          <el-col>
+	          <el-col class="shezhilan">
+	          	<el-button class="shezhi" icon="icon-ali2-shezhi" style="background:#1183FB ;border-style: none" ></el-button>
+	          </el-col>
+	          <el-col>
+	          	<el-button class="guanji"   icon="icon-ali2-guanji" style="border-style: none ; background: #1183FB"></el-button>
+	          </el-col>
+          </el-col>
         </el-aside>
         <el-main><router-view></router-view></el-main>
       </el-container>
@@ -101,6 +108,9 @@
     width: 100%;
     background-color: white;
   }
+  .el-menu-item{
+    width:110px;
+  }
 
   .el-header {
     background-color: white;
@@ -130,7 +140,20 @@
   .colorbg1 {
     background-color: forestgreen;
   }
-
+  .shezhi{
+    height:24px;
+    width: 24px;
+    color: #FFFFFF;
+  }
+  .guanji{
+    margin-top: 20px;
+    height:24px;
+    width: 24px;
+    color: #FFFFFF;
+  }
+  .shezhilan{
+  	margin-top: 380px;
+  }
   .search{
     height: 30px;
     width: 250px;
