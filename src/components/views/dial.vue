@@ -134,14 +134,18 @@
 
 <script>
 
-// import * as SIP from "jssip";
+ import * as SIP from "jssip";
 // import * as JsSIP from 'jssip';
 //
 //   // const socket = new this.JsSIP.WebSocketInterface(obj.wsUrl);
 //
-//     const userAgent = new SIP.UA(config);
+   //const userAgent = new SIP.UA(config);
 
     export default {
+      created() {
+        let data = JSON.parse(this.$route.query.item)
+        this.shuxing=data
+      },
       data () {
         return {
           currentNumber: '',
