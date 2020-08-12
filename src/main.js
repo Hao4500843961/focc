@@ -13,6 +13,7 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/iconfont/iconfont.css'
 import './assets/tubiao/iconfont.css'
+import jssip from 'jssip/lib-es5/JsSIP'
 /*add by haoxl*/
 
 
@@ -23,6 +24,7 @@ Vue.config.productionTip = false
 //Vue.use(IconsPlugin)
 /*add by haoxl bootstrap-vue*/
 Vue.use(Element)
+Vue.use(jssip)
 
 /* eslint-disable no-new */
 new Vue({
