@@ -38,7 +38,7 @@
       },
       methods:{
         toHomePage(){
-          this.$router.push('/home')
+          this.$router.push('/contactsList')
         }
       }
     }

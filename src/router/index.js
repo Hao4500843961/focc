@@ -25,6 +25,10 @@ export default new Router({
         {
           path:'/contactsList',
           component:()=>import('@/components/views/contactsList')
+        },
+        {
+          path:'/calling',
+          component:()=>import('@/components/views/calling')
         }
       ]
     }
