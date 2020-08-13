@@ -1,0 +1,44 @@
+{
+  "id": "1995151",
+  "name": "freeswitch",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2237666",
+      "name": "关机",
+      "font_class": "guanji",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "5383656",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e781",
+      "unicode_decimal": 59265
+    },
+    {
+      "icon_id": "5799980",
+      "name": "设置",
+      "font_class": "yunliankeji_gongyinglianfuben",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "7037123",
+      "name": "关机",
+      "font_class": "guanji1",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    },
+    {
+      "icon_id": "7407566",
+      "name": "设置",
+      "font_class": "shezhi1",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    }
+  ]
+}
