@@ -99,7 +99,10 @@
   .content {
     height: 800px;
     width: 1400px;
-    margin: auto;
+    margin: 0 auto;
+    position: relative;
+    transform:translateY(-50%);
+    top: 50%;
   }
 
   .card {
