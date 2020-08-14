@@ -36,8 +36,8 @@
       <el-container>
         <el-header style="width: 100%;height: 110px;color: #FFFFFF;" >
           <el-container style="height: 100%;width: 100%">
-            <div class="demo-image imgStyle" v-for="imgData in imgDatas" :key="imgData" >
-              <div class="block">
+            <div class="demo-image imgStyle" v-for="imgData in imgDatas" :key="imgData"  >
+              <div class="block centerStyle">
                 <el-image
                   style="width: 26px; height: 26px"
                   :src="imgData.url"
@@ -329,7 +329,13 @@
     margin: 0 auto;
     text-align: center;
     cursor: pointer;
-    margin-top: 20px;
+  }
+
+  .centerStyle{
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .inputBtnList {
