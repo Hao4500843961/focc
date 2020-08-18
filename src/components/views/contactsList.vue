@@ -3,15 +3,16 @@
           <el-header height="80px" class="border-bottom">
             <el-input class="search"
               placeholder="搜索联系人、群组"
+              v-model="search" clearable
               prefix-icon="el-icon-search"
-              v-model="search" clearable>
+           >
             </el-input>
           </el-header>
           <el-container>
             <el-aside width="330px" class="bg_white border-right"><ContactsList></ContactsList>通讯录列表</el-aside>
             <el-container>
               <el-main class="bg_gray"><dial></dial>聊天窗口</el-main>
-              <el-header height="50px" class="bg_white border-bottom">
+              <el-header height="80px" class="bg_white border-bottom">
                 <el-row style="float: left">
                   <el-button  type="text" icon="icon-ali-biaoqing1" ></el-button>
                   <el-button  type="text" icon="icon-ali-wenjian" ></el-button>
@@ -20,7 +21,7 @@
                   <el-button  type="text" icon="icon-ali-shipin" ></el-button>
                 </el-row>
               </el-header>
-              <el-footer height="150px">
+              <el-footer height="120px">
                 文本输入区域
               </el-footer>
             </el-container>
@@ -110,13 +111,17 @@
   }
 
   .search{
-    height: 30px;
+    /*position: relative;*/
+    height: 60px;
     width: 250px;
     float: left;
+    padding-top: 8px;
     vertical-align: middle;
+
   }
 
   .bg_gray{
+    height: 500px;
     background-color: #EEF1F3;
   }
   .bg_white{

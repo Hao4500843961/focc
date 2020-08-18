@@ -32,7 +32,8 @@
 </template>
 
 <script>
-  import Jssip from "@/components/Jssip";
+
+  import * as SIP from "jssip";
   export default {
     name: "Login",
     data() {
@@ -47,7 +48,7 @@
     },
     methods: {
       toHomePage() {
-        this.$router.push("/home");
+        this.$router.push("/contactsList");
       },
       //注册
       tozhuce() {
