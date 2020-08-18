@@ -47,28 +47,7 @@
             </div>
           </el-container>
         </el-header>
-        <el-main style="width: 100%">
-          <span style="color: #FFFFFF;font-size: 30px">正在呼叫...</span>
-          <div class="demo-image">
-            <div class="block" v-for="fit in fits" :key="fit">
-              <span class="demonstration">{{ fit }}</span>
-              <el-image
-                style="width: 300px; height: 150px"
-                :src="url10"
-                :fit="fit"></el-image>
-            </div>
-          </div>
-          <div class="demo-image">
-            <div class="block" v-for="fit in fits" :key="fit">
-              <span class="demonstration">{{ fit }}</span>
-<!--              <el-button icon=     @click="endcall"></el-button>-->
-              <el-image
-                style="width: 71px; height: 33px"
-                :src="url9"
-                :fit="fit"></el-image>
-            </div>
-          </div>
-        </el-main>
+        <el-main style="width: 100%"></el-main>
       </el-container>
     </el-container>
   </div>
@@ -110,8 +89,6 @@
           {name: '添加', url: require('../../assets/fooc_xiaotu/add-sy.png')},
         ],
         fits:[''],
-        url9: require('../../assets/fooc_xiaotu/calling.png'),
-        url10: require('../../assets/fooc_xiaotu/10.png')
       }
     },
     name: "Dial",
@@ -260,6 +237,7 @@
 
 
       phone: function () {
+        this.$router.push('/calling')
         var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33.com');
      //   var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33:7433.com');
         //socket = new SIP.WebSocketInterface('ws://sip.112.124.15.33:5066');

@@ -168,6 +168,17 @@
         url8:require('../../assets/fooc_xiaotu/8.png'),
         url9:require('../../assets/fooc_xiaotu/calling.png'),
         url10:require('../../assets/fooc_xiaotu/person.png'),
+        imgDatas: [
+          {name: '静音', url: require('../../assets/fooc_xiaotu/jingyin.png')},
+          {name: '喇叭', url: require('../../assets/fooc_xiaotu/laba.png')},
+          {name: '信号', url: require('../../assets/fooc_xiaotu/xinhao5.png')},
+          {name: '录音', url: require('../../assets/fooc_xiaotu/luyin.png')},
+          {name: '视频', url: require('../../assets/fooc_xiaotu/shipin.png')},
+          {name: '暂停', url: require('../../assets/fooc_xiaotu/zantingtingzhi.png')},
+          {name: '下一个', url: require('../../assets/fooc_xiaotu/long-arrow-right.png')},
+          {name: '添加', url: require('../../assets/fooc_xiaotu/add-sy.png')},
+        ],
+        fits:[''],
         config:{
           uri:'1010@112.124.15.33',
           transportOptions: {
