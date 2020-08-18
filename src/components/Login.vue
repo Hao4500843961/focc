@@ -1,7 +1,9 @@
 <template>
   <div class="bodybg">
     <div class="login">
-      <el-card class="card">
+      <el-col class="ziti">FOCC系统平台</el-col>
+
+      <el-card class="card" >
         <el-input
           class="mg-top-52"
           placeholder="请输入帐号"
@@ -94,6 +96,16 @@
     background: url("../assets/bg.png") no-repeat 100% 100%;
     background-size: 100%;
   }
+  .ziti{
+    width:406px;
+    height:45px;
+    font-size:45px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-top: 200px;
+    margin-bottom: 40px;
+  }
   .login {
     height: 480px;
     width: 480px;
@@ -104,9 +116,11 @@
   }
   .card {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
-    height: 100%;
-    width: 100%;
+    height: 400px;
+    width: 480px;
+    margin-top: 303px;
     background: rgba(255, 255, 255, 0.3);
+
   }
   .mg-top-52 {
     margin-top: 52px;
