@@ -97,22 +97,25 @@
     background-size: 100%;
   }
   .ziti{
-    width:406px;
+   /* width:406px;
     height:45px;
     font-size:45px;
     font-family:Microsoft YaHei;
     font-weight:400;
     color:rgba(255,255,255,1);
     margin-top: 200px;
-    margin-bottom: 40px;
+    margin-bottom: 40px;*/
   }
   .login {
     height: 480px;
     width: 480px;
-    margin: auto;
     /*position: absolute;
       top: 30%;
       left: 40%;*/
+    margin: 0 auto;
+    position: relative;
+    transform:translateY(-50%);
+    top: 50%;
   }
   .card {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);

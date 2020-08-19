@@ -10,7 +10,7 @@
 
     //注册
     zhuce(acc,pass,p) {
-      var socket = new jssip.WebSocketInterface(p);
+      var socket = new WebSocketInterface()
       var configuration = {
         sockets: [socket],
         outbound_proxy_set: acc,
