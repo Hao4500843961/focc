@@ -25,7 +25,7 @@
         </el-input>
         <div class="inputBtnList">
           <el-button @click="traceNumber" v-for="(item, key) in buttons" :key="key">{{item}}</el-button>
-          <el-button icon="el-icon-phone" @click="phone111"></el-button>
+          <el-button icon="el-icon-phone" @click="phone"></el-button>
           <el-button type="danger" icon="el-icon-video-camera"></el-button>
           <el-button icon="el-icon-folder-delete" @click="clear"></el-button>
 <!--                    <el-button  icon="el-icon-phone" @click="testStart">初始化</el-button>-->
@@ -235,17 +235,7 @@
         // alert('success');
       },
 
-
-
       phone: function () {
-        this.$router.push('/calling')
-        var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33.com');
-/*=======
-      phone111: function () {
-       // var socket = new SIP.WebSocketInterface('ws://sip:112.124.15.33:7433');
->>>>>>> Stashed changes*/
-     //   var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33:7433.com');
-
       SIP.C.SESSION_EXPIRES=120,SIP.C.MIN_SESSION_EXPIRES=120;
         var socket = new SIP.WebSocketInterface('ws://112.124.15.33:5066');
         let configuration = {
@@ -264,8 +254,6 @@
 
         // 连接到信令服务器，并恢复以前的状态，如果以前停止。重新开始时，如果UA配置中的参数设置为，则向SIP域注册。
           userAgent.start();
-        //userAgent.c.SESSION_EXPIRES=180,userAgent.c.MIN_SESSION_EXPIRES=180;
-     // SIP.c.SESSION_EXPIRES=120;
         //注册监听事件监听各个连接状态
         let eventHandlers = {
           'progress': function (e) {
@@ -288,11 +276,10 @@
           },
           'mediaStream': null
         };
-
-        outgoingSession = userAgent.call('sip:1005@112.124.15.33:5066', options);
+        SIP.debug.enabled("SIP:*");
+        outgoingSession = userAgent.call('sip:1011@112.124.15.33:5066', options);
         alert('sucess')
       }
-
     }
 
   }
