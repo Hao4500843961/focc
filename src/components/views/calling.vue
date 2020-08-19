@@ -28,7 +28,7 @@
 
       </el-aside>
       <el-container>
-        <el-header height="109px" >
+        <el-header height="109px" style="width: 100%">
           <el-container>
             <div class="demo-image">
               <div class="block" v-for="fit in fits" :key="fit">
@@ -104,7 +104,7 @@
             </div>
           </el-container>
         </el-header>
-        <el-main>
+        <el-main style="width: 100%">
           <span style="color: #FFFFFF;font-size: 30px">正在呼叫...</span>
           <el-container>
             <div class="demo-image">
@@ -166,7 +166,6 @@
         url6:require('../../assets/fooc_xiaotu/6.png'),
         url7:require('../../assets/fooc_xiaotu/7.png'),
         url8:require('../../assets/fooc_xiaotu/8.png'),
-        url9:require('../../assets/fooc_xiaotu/calling.png'),
         url10:require('../../assets/fooc_xiaotu/person.png'),
         imgDatas: [
           {name: '静音', url: require('../../assets/fooc_xiaotu/jingyin.png')},
@@ -239,6 +238,30 @@
           }
         });
       },
+      connect(){
+        socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33:7433');
+        var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33.com');
+        let session;
+        let configuration = {
+          uri: 'sip:1010@112.124.15.33',
+          sockets:[socket],
+          transportOptions: {
+            ws_servers: 'ws://112.124.15.33:5066',
+          },
+          authorizationUser: '1010',
+          password: '1234',
+          function (data) {
+            data.session.on('accepted', function (data) {
+              if (data.originator === 'remote' && currentSession == null) {
+                currentSession = incomingSession;
+                incomingSession = null;
+                this.$router.push('/hanging')
+              }
+            });
+
+              }
+            }
+          },
       hangup(){
         this.$router.push('/dial')
         var to =document.getElementById(this.currentNumber);

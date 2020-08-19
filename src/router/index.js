@@ -29,6 +29,10 @@ export default new Router({
         {
           path:'/calling',
           component:()=>import('@/components/views/calling')
+        },
+        {
+          path:'/hanging',
+          component:()=>import('@/components/views/hanging')
         }
       ]
     }
