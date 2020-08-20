@@ -26,7 +26,7 @@
           v-model="proxy"
           clearable
         ></el-input>
-        <el-button type="primary" class="mg-top-20 login_btn" round @click="zhuce">注册</el-button>
+        <el-button type="primary" class="mg-top-20 login_btn" round v-on:click="tin">注册</el-button>
         <el-button type="primary" class="mg-top-20 login_btn" round v-on:click="toHomePage">登录</el-button>
       </el-card>
     </div>
@@ -40,7 +40,7 @@
     name: "Login",
     data() {
       return {
-        account: '1009',
+        account: 'sip:1009@192.168.27.135',
         password: '1234',
         proxy: 'ws://192.168.27.135:5066'
         // account: Jssip.account,
@@ -53,17 +53,23 @@
         this.$router.push("/contactsList");
       },
       //注册
-      zhuce () {
-        const {account,password,proxy} =this
-        var js = Jssip.zhuce(account,password,proxy)
-        userAgent.on("registered", function (data) {
-          console.info(
-            "registered: ",
-            data.response.status_code,
-            ",",
-            data.response.reason_phrase
-          );
-        });
+      tin() {
+        var acc_uri =this.account;
+        var ws_uri =this.proxy;
+        var pass_uri = this.password
+        console.info(acc_uri,ws_uri,pass_uri);
+        var socket = new SIP.WebSocketInterface(ws_uri);
+        var configuration = {
+          sockets: [socket],
+          outbound_proxy_set: ws_uri,
+          uri: acc_uri,
+          password: pass_uri,
+          register: true,
+          session_timers: false
+        };
+        var userAgent = new SIP.UA(configuration);
+        var ans = userAgent.isRegistered()
+        console.info(ans);
       },
     },
   };
