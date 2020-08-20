@@ -40,9 +40,9 @@
     name: "Login",
     data() {
       return {
-        account: 'sip:1009@192.168.27.135',
+        account: 'sip:1009@192.168.1.7',
         password: '1234',
-        proxy: 'ws://192.168.27.135:5066'
+     //   proxy: 'ws://192.168.27.135:5066'
         // account: Jssip.account,
         // password: Jssip.password,
         // proxy: Jssip.proxy,
@@ -54,22 +54,48 @@
       },
       //注册
       tin() {
-        var acc_uri =this.account;
-        var ws_uri =this.proxy;
-        var pass_uri = this.password
-        console.info(acc_uri,ws_uri,pass_uri);
-        var socket = new SIP.WebSocketInterface(ws_uri);
-        var configuration = {
-          sockets: [socket],
-          outbound_proxy_set: ws_uri,
-          uri: acc_uri,
-          password: pass_uri,
-          register: true,
-          session_timers: false
-        };
-        var userAgent = new SIP.UA(configuration);
-        var ans = userAgent.isRegistered()
-        console.info(ans);
+        SIP.C.SESSION_EXPIRES=120,SIP.C.MIN_SESSION_EXPIRES=120;
+ //        var acc_uri =this.account;
+ //       // var ws_uri ='112.124.15.33';
+ //        var pass_uri = this.password
+ //    //    console.info(acc_uri,ws_uri,pass_uri);
+ //      //  var socket = new SIP.WebSocketInterface(ws_uri);
+ //        var socket = new SIP.WebSocketInterface('ws://112.124.15.33:5066');
+ //        var configuration = {
+ //          sockets: [socket],
+ // //         outbound_proxy_set: ws_uri,
+ //          uri: acc_uri,
+ //          password: pass_uri,
+ //          authorizationUser: '1017',
+ //          register: true,
+ //          session_timers: false,
+ //          contact_uri: 'sip:1017@192.168.1.7'+';transport=ws',
+ //        };
+ //        var userAgent = new SIP.UA(configuration);
+ //        var ans = userAgent.isRegistered()
+ //        console.info(ans);
+
+
+
+        let socket = new SIP.WebSocketInterface('ws://112.124.15.33:5066');
+
+        let configuration = {
+          uri: 'sip:1017@112.124.15.33',
+          // uri: 'sip:1010@192.168.1.1',
+          sockets:[socket],
+          authorization_user: '1017',
+          password: '1234',
+          display_name:'1017',
+        //  register: true,//指示启动时JsSIP用户代理是否应自动注册
+          //session_timers: false//启用会话计时器（根据RFC 4028）
+
+         contact_uri: 'sip:1017@112.124.15.33'+';transport=ws',
+        }
+        let userAgent = new SIP.UA(configuration);
+        var ans = userAgent.isRegistered();
+          console.info(ans);
+
+
       },
     },
   };

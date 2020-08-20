@@ -105,7 +105,7 @@
           </el-container>
         </el-header>
         <el-main style="width: 100%">
-          <span style="color: #FFFFFF;font-size: 30px">正在呼叫...</span>
+          <span style="color: #FFFFFF;font-size: 30px">正在通话...</span>
           <el-container>
             <div class="demo-image">
               <div class="block" v-for="fit in fits" :key="fit">
@@ -132,6 +132,7 @@
 
 <script>
   import * as SIP from "jssip";
+  import * as session from "jssip";
   // import * as JsSIP from 'jssip';
   //
   //   // const socket = new this.JsSIP.WebSocketInterface(obj.wsUrl);
@@ -203,6 +204,7 @@
       clear: function () {
         this.currentNumber = '';
       },
+
       phone: function () {
         alert(this.currentNumber);
         var to =document.getElementById(this.currentNumber);
@@ -264,20 +266,11 @@
           },
       hangup(){
         this.$router.push('/dial')
-        var to =document.getElementById(this.currentNumber);
-        var sipsession = userAgent.invite(to + '@:7443', {
-          sessionDescriptionHandlerOptions: {
-            constraints: {
-              'audio': true,
-              'video': false ,
-            }
-          }
-        });
-        var eventHandlers = {
-          'ended': function(e){
-            console.log('call ended : ', e);
-          }
-        };
+        let session;
+        session.terminate(options=null);
+
+
+
       },
       startTimer() {
         this.seconds += 1;

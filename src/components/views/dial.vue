@@ -251,18 +251,19 @@
       },
       phone: function () {
         // this.$router.push('/calling')
-        var that=this;
+        var that = this;
 
-        SIP.C.SESSION_EXPIRES=120,SIP.C.MIN_SESSION_EXPIRES=120;
+        SIP.C.SESSION_EXPIRES = 120;
+        SIP.C.MIN_SESSION_EXPIRES = 120;
         var socket = new SIP.WebSocketInterface('ws://112.124.15.33:5066');
-       // var socket = new SIP.WebSocketInterface('wss://112.124.15.33:7433');
+        // var socket = new SIP.WebSocketInterface('wss://112.124.15.33:7433');
         let configuration = {
           uri: 'sip:1010@112.124.15.33',
           // uri: 'sip:1010@192.168.1.1',
-          sockets:[socket],
+          sockets: [socket],
           transportOptions: {
             ws_servers: 'ws://112.124.15.33:5066',
-          //  ws_servers: 'wss://112.124.15.33:7433',
+            //  ws_servers: 'wss://112.124.15.33:7433',
           },
           authorizationUser: '1010',
           password: '1234'
@@ -296,11 +297,15 @@
           'mediaStream': null
         };
         SIP.debug.enabled("SIP:*");
-     // outgoingSession = userAgent.call('sip:1005@112.124.15.33:5066', options);
-        outgoingSession = userAgent.call('sip:'+that.currentNumber+'@112.124.15.33', options);
-      //  outgoingSession = userAgent.call('sip:1011@112.124.15.33:7433', options);
-        alert(this.currentNumber)
+        // outgoingSession = userAgent.call('sip:1005@112.124.15.33:5066', options);
+        outgoingSession = userAgent.call('sip:' + that.currentNumber + '@112.124.15.33', options);
+        //  outgoingSession = userAgent.call('sip:1011@112.124.15.33:7433', options);
+
+
       }
+
+
+
     }
   }
 </script>
