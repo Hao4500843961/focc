@@ -26,7 +26,7 @@
           v-model="proxy"
           clearable
         ></el-input>
-        <el-button type="primary" class="mg-top-20 login_btn" round @click="tozhuce">注册</el-button>
+        <el-button type="primary" class="mg-top-20 login_btn" round @click="zhuce">注册</el-button>
         <el-button type="primary" class="mg-top-20 login_btn" round v-on:click="toHomePage">登录</el-button>
       </el-card>
     </div>
@@ -53,7 +53,7 @@
         this.$router.push("/contactsList");
       },
       //注册
-      tozhuce() {
+      zhuce () {
         const {account,password,proxy} =this
         var js = Jssip.zhuce(account,password,proxy)
         userAgent.on("registered", function (data) {
@@ -97,14 +97,14 @@
     background-size: 100%;
   }
   .ziti{
-   /* width:406px;
+    width:406px;
     height:45px;
     font-size:45px;
     font-family:Microsoft YaHei;
     font-weight:400;
     color:rgba(255,255,255,1);
-    margin-top: 200px;
-    margin-bottom: 40px;*/
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
   .login {
     height: 480px;

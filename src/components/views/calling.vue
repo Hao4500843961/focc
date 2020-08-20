@@ -139,8 +139,8 @@
   //const userAgent = new SIP.UA(config);
   export default {
     created() {
-      let data = JSON.parse(this.$route.query.item)
-      this.shuxing=data
+      // let data = JSON.parse(this.$route.query.item)
+      // this.shuxing=data
       this.timer = setInterval(this.startTimer, 1000);
     },
     destroyed () {

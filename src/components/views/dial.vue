@@ -28,7 +28,7 @@
           <el-button icon="el-icon-phone" @click="phone"></el-button>
           <el-button type="danger" icon="el-icon-video-camera"></el-button>
           <el-button icon="el-icon-folder-delete" @click="clear"></el-button>
-<!--                    <el-button  icon="el-icon-phone" @click="testStart">初始化</el-button>-->
+          <!--                    <el-button  icon="el-icon-phone" @click="testStart">初始化</el-button>-->
           <!--          <el-button   @click="captureLocalMedia">本地媒体</el-button>-->
         </div>
 
@@ -47,7 +47,28 @@
             </div>
           </el-container>
         </el-header>
-        <el-main style="width: 100%"></el-main>
+        <el-main style="width: 100%">
+<!--          <span style="color: #FFFFFF;font-size: 30px">正在呼叫...</span>-->
+<!--          <div class="demo-image">-->
+<!--            <div class="block" v-for="fit in fits" :key="fit">-->
+<!--              <span class="demonstration">{{ fit }}</span>-->
+<!--              <el-image-->
+<!--                style="width: 300px; height: 150px"-->
+<!--                :src="url10"-->
+<!--                :fit="fit"></el-image>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="demo-image">-->
+<!--            <div class="block" v-for="fit in fits" :key="fit">-->
+<!--              <span class="demonstration">{{ fit }}</span>-->
+<!--              &lt;!&ndash;              <el-button icon=     @click="endcall"></el-button>&ndash;&gt;-->
+<!--              <el-image-->
+<!--                style="width: 71px; height: 33px"-->
+<!--                :src="url9"-->
+<!--                :fit="fit"></el-image>-->
+<!--            </div>-->
+<!--          </div>-->
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -56,7 +77,6 @@
 
 <script>
   import * as SIP from "jssip";
-
   let outgoingSession = null;
   let incomingSession = null;
   let currentSession = null;
@@ -89,6 +109,8 @@
           {name: '添加', url: require('../../assets/fooc_xiaotu/add-sy.png')},
         ],
         fits:[''],
+        url9: require('../../assets/fooc_xiaotu/calling.png'),
+        url10: require('../../assets/fooc_xiaotu/10.png')
       }
     },
     name: "Dial",
@@ -106,37 +128,32 @@
       clear: function () {
         this.currentNumber = '';
       },
-
-
-
       testStart: function () {
-       //    //socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33:7433');
-       //    var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33.com');
-       // //socket = new SIP.WebSocketInterface('ws://sip.112.124.15.33:5066');
-       //  let configuration = {
-       //    uri: 'sip:1010@112.124.15.33',
-       //     sockets:[socket],
-       //    transportOptions: {
-       //      ws_servers: 'ws://112.124.15.33:5066',
-       //    },
-       //    authorizationUser: '1010',
-       //    password: '1234'
-       //    //register: true,//指示启动时JsSIP用户代理是否应自动注册
-       //    //session_timers: false//启用会话计时器（根据RFC 4028）
-       //  }
-       //  userAgent = new SIP.UA(configuration);
-       //
-       //  // userAgent.on('connecting',function (session) {
-       //  //
-       //  // })
-       //  alert('success');
-
+        //    //socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33:7433');
+        //    var socket = new SIP.WebSocketInterface('wss://sip.112.124.15.33.com');
+        // //socket = new SIP.WebSocketInterface('ws://sip.112.124.15.33:5066');
+        //  let configuration = {
+        //    uri: 'sip:1010@112.124.15.33',
+        //     sockets:[socket],
+        //    transportOptions: {
+        //      ws_servers: 'ws://112.124.15.33:5066',
+        //    },
+        //    authorizationUser: '1010',
+        //    password: '1234'
+        //    //register: true,//指示启动时JsSIP用户代理是否应自动注册
+        //    //session_timers: false//启用会话计时器（根据RFC 4028）
+        //  }
+        //  userAgent = new SIP.UA(configuration);
+        //
+        //  // userAgent.on('connecting',function (session) {
+        //  //
+        //  // })
+        //  alert('success');
         // 成功注册成功,data:Response JsSIP.IncomingResponse收到的SIP 2XX响应的实例
-
         userAgent.on('registered', function (data) {
           console.info("registered: ", data.response.status_code, ",", data.response.reason_phrase);
         });
-        },
+      },
       //   //由于注册失败而被解雇,data:Response JsSIP.IncomingResponse接收到的SIP否定响应的实例，如果失败是由这样的响应的接收产生的，否则为空
       //   userAgent.on('registrationFailed', function (data) {
       //     console.log("registrationFailed, ", data);
@@ -220,30 +237,32 @@
       //   userAgent.start();
       //   alert('success');
       // },
-
       captureLocalMedia: function () {
         function gotLocalMedia(stream) {
           console.info('Received local media stream');
           localStream = stream;
           audio.src = URL.createObjectURL(stream);
         }
-
         console.info('Requesting local video & audio');
         navigator.getUserMedia(constraints, gotLocalMedia, function (e) {
           alert('getUserMedia() error: ' + e.name);
         });
         // alert('success');
       },
-
       phone: function () {
-      SIP.C.SESSION_EXPIRES=120,SIP.C.MIN_SESSION_EXPIRES=120;
+        // this.$router.push('/calling')
+        var that=this;
+
+        SIP.C.SESSION_EXPIRES=120,SIP.C.MIN_SESSION_EXPIRES=120;
         var socket = new SIP.WebSocketInterface('ws://112.124.15.33:5066');
+       // var socket = new SIP.WebSocketInterface('wss://112.124.15.33:7433');
         let configuration = {
-         uri: 'sip:1010@112.124.15.33',
-         // uri: 'sip:1010@192.168.1.1',
+          uri: 'sip:1010@112.124.15.33',
+          // uri: 'sip:1010@192.168.1.1',
           sockets:[socket],
           transportOptions: {
             ws_servers: 'ws://112.124.15.33:5066',
+          //  ws_servers: 'wss://112.124.15.33:7433',
           },
           authorizationUser: '1010',
           password: '1234'
@@ -251,13 +270,13 @@
           //session_timers: false//启用会话计时器（根据RFC 4028）
         }
         userAgent = new SIP.UA(configuration);
-
         // 连接到信令服务器，并恢复以前的状态，如果以前停止。重新开始时，如果UA配置中的参数设置为，则向SIP域注册。
-          userAgent.start();
+        userAgent.start();
         //注册监听事件监听各个连接状态
         let eventHandlers = {
           'progress': function (e) {
             console.log('call is in progress');
+            that.$router.push('/calling')
           },
           'failed': function (e) {
             console.log('call failed: ', e);
@@ -277,11 +296,12 @@
           'mediaStream': null
         };
         SIP.debug.enabled("SIP:*");
-        outgoingSession = userAgent.call('sip:1011@112.124.15.33:5066', options);
-        alert('sucess')
+     // outgoingSession = userAgent.call('sip:1005@112.124.15.33:5066', options);
+        outgoingSession = userAgent.call('sip:'+that.currentNumber+'@112.124.15.33', options);
+      //  outgoingSession = userAgent.call('sip:1011@112.124.15.33:7433', options);
+        alert(this.currentNumber)
       }
     }
-
   }
 </script>
 
@@ -290,7 +310,6 @@
     padding: 0;
     margin: 0;
   }
-
   .el-header {
     background-color: #000000;
     color: #333;
@@ -299,7 +318,6 @@
     height: 109px;
     width: 931px;
   }
-
   .el-aside {
     background-color: #FFFFFF;
     color: #333;
@@ -307,7 +325,6 @@
     line-height: 24px;
     height: 800px;
   }
-
   .el-main {
     background-color: #151515;
     color: #333;
@@ -316,7 +333,6 @@
     height: 683px;
     width: 931px;
   }
-
   .el-input {
     margin-top: 30px;
     width: 290px;
@@ -325,14 +341,12 @@
     margin-right: auto;
     display: block;
   }
-
   .pinPage {
     background-size: 100% 100%;
     overflow: hidden;
     width: 400px;
     height: 200px
   }
-
   .imgStyle {
     height: 100%;
     width: 100px;
@@ -340,21 +354,18 @@
     text-align: center;
     cursor: pointer;
   }
-
   .centerStyle{
     margin: 0 auto;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
   }
-
   .inputBtnList {
     text-align: initial;
     width: 330px;
     box-sizing: border-box;
     height: auto;
   }
-
   input {
     width: 100px;
     height: 15px;
@@ -362,7 +373,6 @@
     margin-right: auto;
     display: block;
   }
-
   .el-button {
     width: 70px;
     height: 40px;
@@ -374,9 +384,7 @@
     border: 1px solid rgba(153, 153, 153, 1);
     /*background-color: transparent*/
     /*background-color: #FFFFFF;*/
-
   }
-
   .el-button--mini {
     width: 30px;
     height: 30px;
@@ -386,7 +394,6 @@
     float: right;
     border-radius: 0px;
   }
-
   .el-button--supermini {
     width: 15px;
     height: 15px;
@@ -395,9 +402,7 @@
     margin-right: 20px;
     /*float: right;*/
     /*border-radius:0px;*/
-
   }
-
   .callSpan {
     width: 58px;
     height: 28px;
@@ -407,27 +412,20 @@
     color: rgba(0, 0, 0, 1);
     vertical-align: middle;
   }
-
   .search {
     margin-outside: 60px;
   }
-
   .call {
     margin: 25px 0;
   }
-
   .imageSpan {
     width: 20px;
     height: 20px;
   }
-
   .name {
     border-radius: 4px;
   }
-
   body > .el-container {
     margin-bottom: 40px;
   }
-
-
 </style>
